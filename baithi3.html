@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  let str1 = "abcd";
+  let str2 = "assabjcdjkt";
+  function check(string1,string2){
+    let check = false;
+    let a = string1.length;
+    let b = string2.length;
+    for (let i = 0; i < b - a + 1; i++){
+      let string2slice = string2.slice(i,i + a);
+      if (string1 == string2slice) {
+        check = true;
+        break;
+      }
+    }
+    return check;
+  }
+  console.log(check(str1,str2));
+</script>
+</body>
+</html>

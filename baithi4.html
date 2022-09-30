@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<canvas id="Mycanvas"></canvas>
+<script>
+  class Rell {
+    x;
+    y;
+    width;
+    height;
+    color;
+    canvas;
+    ctx
+
+    constructor(x, y, width, height, color) {
+      this.x = x;
+      this.y = y;
+      this.width = width;
+      this.height = height;
+      this.color = color;
+      this.canvas = document.getElementById('Mycanvas');
+      this.ctx = this.canvas.getContext('2d')
+    }
+
+    Render() {
+      this.ctx.beginPath();
+      this.ctx.rect(this.x, this.y, this.width, this.height);
+      this.ctx.fillStyle = this.color;
+      this.ctx.fill();
+      this.ctx.closePath();
+    }
+
+  }
+  let HCN = new Rell(10, 10, 200, 100, '#000000')
+  HCN.Render()
+</script>
+</body>
+</html>
